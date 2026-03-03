@@ -1,5 +1,42 @@
-MOV R0 5
-MOV R1 10
-ADD R0 R1
-STORE R0 20
+#                                                -- PROGRAM FILE--
+#                                            ===========================
+# CURRENT INSTRUCTIONS:
+#      - HLT
+#      - MOV
+#      - ADD
+#      - SUB
+#      - JMP
+#      - LOAD
+#      - STORE
+# =====================================================================================================================================
+#
+# Program One:
+#         - Test if the registers are all accessible and will update values. Expected output: Registry [1, 2, 3, 4]
+# MOV R0 1
+# MOV R1 2
+# MOV R2 3
+# MOV R3 4
+# HLT
+# =================================================================
+#
+#Program Two:
+#         - Test if the registers can be operated upon together, using ADD, SUB. Expected output: Registry [5, 10, 5, 0]
+# MOV R0 5
+# MOV R1 10
+# ADD R2 R1
+# SUB R2 R0
+# HLT
+# =================================================================
+#
+# Program Three:
+#      - Test if memory works; STORE register values to memory addresses, and LOAD from memory address onto registry. 
+#        Expected output: Registry [10, 10, 0 ,0]
+MOV R0 10
+STORE R0 1
+LOAD R1 1
 HLT
+# =================================================================
+#
+# Issues:
+#         - The program cannot currently handle empty lines, the parser fails at 'if not line or line starts with '#'' This is wrong somehow.
+#         - Registers cant hold negative values.
