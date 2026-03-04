@@ -1,12 +1,16 @@
 
 OPERATIONS = {
-    'MOV': 0b000,
-    'ADD': 0b001,
-    'SUB': 0b010,
-    'LOAD': 0b011,
-    'STORE': 0b100,
-    'JMP': 0b101,
-    'HLT': 0b111
+    'MOV': 0b0000,
+    'ADD': 0b0001,
+    'SUB': 0b0010,
+    'LOAD': 0b0011,
+    'STORE': 0b0100,
+    'JMP': 0b0101,
+    'HLT': 0b0110,
+    'CMP': 0b0111,
+    'BEQ': 0b1000,
+    'BNE': 0b1001,
+    'BLT': 0b1010
 }
 
 REGISTERS = {
@@ -32,13 +36,15 @@ def encode(tokens):
     elif operation == 'MOV':
         first_register = REGISTERS[tokens[1]]
         immediate_value = int(tokens[2])
-    elif operation in ['ADD', 'SUB']:
+    elif operation in ['ADD', 'SUB', 'CMP']:
         first_register = REGISTERS[tokens[1]]
         second_register = REGISTERS[tokens[2]]
+    elif operation in ['BEQ', 'BNE', 'BLT']:
+        immediate_value = int(tokens[1])
     
     operation = OPERATIONS[tokens[0]]
     print(f'Binary instruction: {operation} {first_register} {second_register} {immediate_value}')
-    encoded_instruction = (operation << 13) | (first_register << 11) | (second_register << 9) | (immediate_value & 0b111111111)
+    encoded_instruction = (operation << 12) | (first_register << 10) | (second_register << 8) | (immediate_value & 0b11111111)
     return encoded_instruction
 
 
