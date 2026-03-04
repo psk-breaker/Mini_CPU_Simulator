@@ -1,6 +1,6 @@
-"""
-
 # 16-Bit RISC CPU Simulator (Python)
+[Build](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
+By [psk-breaker](https://github.com/psk-breaker/Mini_CPU_Simulator)[Socials]
 
 A from-scratch simulation of a 16-bit load/store RISC processor written in Python.
 
@@ -103,19 +103,17 @@ These flags enable conditional branching and loop construction, allowing full pr
 
 Example control flow:
 ```python
-0) MOV R0 5  # -- Update register 0 with value 5
-1) MOV R1 1  -- Update register 1 with value 1
-2) SUB R0 R1  -- R0 = R0 - R1
-3) CMP R0 R1  -- Flags = R0 - R1
-4) BEQ 6      -- Branch to instruction 6 if Flags previously raised
-5) BNE 2      -- Branch to instruction 2 if flags indicated not equal, thereby creating a looping behaviour.
+0) MOV R0 5   # -- Update register 0 with value 5
+1) MOV R1 1   # -- Update register 1 with value 1
+2) SUB R0 R1  # -- R0 = R0 - R1
+3) CMP R0 R1  # -- Flags = R0 - R1
+4) BEQ 6      # -- Branch to instruction 6 if Flags previously raised
+5) BNE 2      # -- Branch to instruction 2 if flags indicated not equal, thereby creating a looping behaviour.
 6) MOV R2 10  
 7) MOV R3 1
-8) ADD R3 R1  -- R3 = R3 + R1
+8) ADD R3 R1  # -- R3 = R3 + R1
 9) CMP R3 R2
-10) BLT 8      -- If flags raised for R3 less than R2, branch to instruction 8.
-11) HLT        -- Halt compute.
+10) BLT 8     # -- If flags raised for R3 less than R2, branch to instruction 8.
+11) HLT       # -- Halt compute.
 ```
 This is how high-level constructs like if and while are implemented at machine level.
-
-"""
