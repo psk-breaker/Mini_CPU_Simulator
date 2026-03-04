@@ -1,5 +1,6 @@
 #                                                -- PROGRAM FILE--
 #                                            ===========================
+#===========================================================================================================
 # CURRENT INSTRUCTIONS:
 #      - HLT
 #      - MOV
@@ -12,7 +13,8 @@
 #      - BEQ
 #      - BNE
 #      - BLT
-# =====================================================================================================================================
+# ================================================================
+# ================================================================
 #
 # Program One:
 #         - Test if the registers are all accessible and will update values. Expected output: Registry [1, 2, 3, 4]
@@ -59,5 +61,5 @@ HLT
 # =================================================================
 #
 # Issues:
-#         - The program cannot currently handle empty lines, the parser fails at 'if not line or line starts with '#'' This is wrong somehow.
-#         - Registers cant hold negative values.
+#         - The program cannot currently handle empty lines, the parser fails at 
+#           'if not line or line starts with '#''.
