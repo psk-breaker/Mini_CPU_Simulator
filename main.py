@@ -17,13 +17,8 @@ print('Memory:', cpu.memory)
 #       =======================================================================================
 # 
 # ++ 1 ++ 
-# I need clean error messages, comments, a STRONG README, design_notes.pdf, architecture diagram.
-# 
 # README: Project Overview, How it Works, Instruction Set, Example Program, How to Run,
 # Design Decisions, Future Improvements
+# Design notes.pdf
+# Architecture diagram
 #
-# ++ 2 ++
-# Debug mode next up
-#
-# ++ 3 ++
-# ADVANCED: Pipeline simulation, cache simulation, Interrupt system, step execution
