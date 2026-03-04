@@ -31,10 +31,22 @@
 # Program Three:
 #      - Test if memory works; STORE register values to memory addresses, and LOAD from memory address onto registry. 
 #        Expected output: Registry [10, 10, 0 ,0]
-MOV R0 10
-STORE R0 1
-LOAD R1 1
+# MOV R0 10
+# STORE R0 1
+# LOAD R1 1
+# HLT
+# =================================================================
+#
+# Program Four:
+#      - Test if looping logic works. Expected output: [1, 1, 0 , 0]
+MOV R0 5
+MOV R1 1
+SUB R0 R1
+CMP R0 R1
+BEQ 6
+BNE 2
 HLT
+# =================================================================
 # =================================================================
 #
 # Issues:
